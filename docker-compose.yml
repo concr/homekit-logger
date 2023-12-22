@@ -2,10 +2,10 @@ version: "3.8"
 
 services:
   app:
-    build: "./images/homekit-logger"
+    build:
+      context: "./images/homekit-logger"
+      dockerfile: "Dockerfile-armv7"
     container_name: "homekit-logger_app"
-    ports:
-      - "8321:8321"
     volumes:
       - "/etc/localtime:/etc/localtime:ro"
       - "/etc/timezone:/etc/timezone:ro"
