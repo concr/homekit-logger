@@ -1,0 +1,16 @@
+FROM balenalib/armv7hf-alpine-python:latest
+
+RUN mkdir -p /app/log
+
+WORKDIR /app
+
+COPY homekit-logger.py /app
+COPY requirements.txt /app
+
+RUN pip install --no-cache-dir -r requirements.txt
+
+COPY . .
+
+VOLUME [ "/app/log" ]
+
+CMD [ "python3", "/app/homekit-logger.py", "8321" ]
