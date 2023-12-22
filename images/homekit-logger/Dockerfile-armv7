@@ -13,4 +13,6 @@ COPY . .
 
 VOLUME [ "/app/log" ]
 
+EXPOSE 8321/tcp
+
 CMD [ "python3", "/app/homekit-logger.py", "8321" ]
