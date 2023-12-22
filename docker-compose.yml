@@ -6,6 +6,8 @@ services:
       context: "./images/homekit-logger"
       dockerfile: "Dockerfile"
     container_name: "homekit-logger_app"
+    ports:
+      - "8321:8321"
     volumes:
       - "/etc/localtime:/etc/localtime:ro"
       - "/etc/timezone:/etc/timezone:ro"
