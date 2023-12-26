@@ -4,10 +4,18 @@ services:
   app:
     build:
       context: "./images/homekit-logger"
-      dockerfile: "Dockerfile"
+      dockerfile: "Dockerfile-armv7"
     container_name: "homekit-logger_app"
+    ports:
+      - "8321:8321"
     volumes:
       - "/etc/localtime:/etc/localtime:ro"
       - "/etc/timezone:/etc/timezone:ro"
       - "./volumes/homekit-logger/log:/app/log"
+    healthcheck:
+      test: curl --fail localhost:8321 || exit 1
+      interval: 60s
+      timeout: 5s
+      retries: 3
+      start_period: 1m
     restart: always
