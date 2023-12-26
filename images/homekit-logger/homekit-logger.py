@@ -64,7 +64,7 @@ def set_status():
     )
 
 @app.route("/health", methods=['GET'])
-def status():
+def health():
     return Response(
         response="OK",
         status=200,
