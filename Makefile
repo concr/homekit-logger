@@ -1,7 +1,7 @@
 help:
 	@echo ""
 	@echo "make build .... build container"
-	@echo "make deploy ... acme-json ........ creates empty volumes/traefik/acme.json if not exists"
+	@echo "make deploy ... deploy app"
 	@echo ""
 
 build:
