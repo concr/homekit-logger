@@ -10,4 +10,4 @@ build:
 deploy:
         @ssh debris "cd container_host/homekit-logger && docker compose down"
         @ssh debris "cd container_host/homekit-logger && git pull"
-        @ssh debris "cd container_host/homekit-logger && docker compose down"
+        @ssh debris "cd container_host/homekit-logger && docker compose up --build"
