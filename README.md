@@ -22,6 +22,8 @@ Just start the container with `docker compose up -d --build` and go on to the ne
 
 ## Setup automation for logging
 
+TBD: Changed in iOS 26 a bit ...
+
 * Open Home app (iOS, iPadOS or macOS)
 * Click `+` then `Add Automation`
 * Select `A Sensor Detects Something`
@@ -43,7 +45,7 @@ Just start the container with `docker compose up -d --build` and go on to the ne
 
 Set door open status: `curl -X POST 127.0.0.1:8321/status -H 'status: open'`
 
-Set door closed status: `curl -X POST 127.0.0.1:8321/status -H 'status: closed'`
+Set door closed status: `curl -X POST 127.0.0.1:8321/status -H 'status: close'`
 
 Reset door status: `curl -X POST 127.0.0.1:8321/status -H 'status: unknown'`
 
