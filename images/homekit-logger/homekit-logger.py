@@ -47,7 +47,7 @@ def set_status():
     global door_status, door_status_json
     status_header = request.headers.get('status')
 
-    if status_header not in ["open", "closed", "unknown"]:
+    if status_header not in ["open", "close", "unknown"]:
         return Response(
             response=json.dumps({"error": "Invalid state"}),
             status=400,
@@ -68,7 +68,7 @@ def health():
     return Response(
         response="OK",
         status=200,
-        mimetype="text/plain "
+        mimetype="text/plain"
     )
 
 
